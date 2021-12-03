@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="HotelApp.Views.RoomView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelApp.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="{Binding Hotel.Name}" FontSize="30" HorizontalAlignment="Center"/>
+            <ListView Width="600" Height="250" Margin="0,10,0,0" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedRoom}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,0,470,0" Text="Rumsstorlek" FontSize="12"/>
+                                <TextBlock Grid.Column="0" Grid.Row="1" Text="{Binding Size}" FontSize="12"/>
+                                <TextBlock Grid.Column="1" Grid.Row="0" Text="Pris/natt" FontSize="12"/>
+                                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Price}" FontSize="12"/>
+                            </Grid>                            
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding ShowRoomCommand}" Width="100" Margin="0,10,0,0" Content="Välj rum"/>
+        </StackPanel>
+            
+    </Grid>
+</UserControl>

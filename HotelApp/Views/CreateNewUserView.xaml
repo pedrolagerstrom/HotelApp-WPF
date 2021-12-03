@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="HotelApp.Views.CreateNewUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HotelApp.Views"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Skapa ett konto" FontSize="30"/>
+            <Label Content="Förnamn"/>
+            <TextBox Text="{Binding FirstName}" Width="200" Margin="5"/>
+            <Label Content="Efternamn"/>
+            <TextBox Text="{Binding LastName}" Width="200" Margin="5"/>
+            <Label Content="Email"/>
+            <TextBox Text="{Binding Email}" Width="200" Margin="5"/>
+            <Label Content="Password"/>
+            <TextBox Text="{Binding Password}" Width="200" Margin="5"/>
+            <Button Command="{Binding SaveUserCommand}" Width="100" Margin="5" Content="Skapa konto"/>
+        </StackPanel>
+            
+    </Grid>
+</UserControl>
